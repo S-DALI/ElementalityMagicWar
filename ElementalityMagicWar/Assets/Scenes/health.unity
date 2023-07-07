@@ -133,13 +133,14 @@ GameObject:
   m_Component:
   - component: {fileID: 294528092}
   - component: {fileID: 294528091}
+  - component: {fileID: 294528095}
   - component: {fileID: 294528090}
   - component: {fileID: 294528089}
   - component: {fileID: 294528093}
   - component: {fileID: 294528094}
   m_Layer: 0
   m_Name: Capsule
-  m_TagString: Untagged
+  m_TagString: Capsule
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -264,6 +265,20 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9920a74f267295745b7453127cf5c2c2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &294528095
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 294528088}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b239848a9a4947e42965c1fd2a853a79, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  maxHealth: 100
+  currentHealth: 0
 --- !u!1 &330585543
 GameObject:
   m_ObjectHideFlags: 0
@@ -698,6 +713,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1086713500}
   - component: {fileID: 1086713499}
+  - component: {fileID: 1086713501}
   - component: {fileID: 1086713498}
   - component: {fileID: 1086713497}
   m_Layer: 0
@@ -787,9 +803,23 @@ Transform:
   m_GameObject: {fileID: 1086713496}
   m_LocalRotation: {x: 0.38268343, y: 0, z: 0, w: 0.92387956}
   m_LocalPosition: {x: 14.14, y: 0.58, z: -2.12}
-  m_LocalScale: {x: 30, y: 20, z: 1}
+  m_LocalScale: {x: 20, y: 15, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 45, y: 0, z: 0}
+--- !u!114 &1086713501
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1086713496}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: abe7ada9dc30e424d8541f7cd1248b83, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  damageAmount: 10
+  capsule: {fileID: 294528095}
