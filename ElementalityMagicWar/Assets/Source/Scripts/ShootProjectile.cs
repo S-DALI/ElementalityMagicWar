@@ -4,7 +4,6 @@ using UnityEngine;
 public class ShootProjectile:MonoBehaviour
 {
     [SerializeField] private Projectile projectile;
-    [SerializeField] private float projectileSpeed = 20f;
     [SerializeField] private Transform LeftPointAttack;
     [SerializeField] private Transform RightPointAttack;
 
@@ -34,6 +33,6 @@ public class ShootProjectile:MonoBehaviour
     void CreateProjectile(Transform attackPoint)
     {
         var projectileObject = Instantiate(projectile.gameObject,attackPoint.position,Quaternion.identity)as GameObject;
-        projectileObject.GetComponent<Projectile>().Shot(destination, attackPoint, projectileSpeed);
+        projectileObject.GetComponent<Projectile>().Shot(destination, attackPoint);
     }
 }
