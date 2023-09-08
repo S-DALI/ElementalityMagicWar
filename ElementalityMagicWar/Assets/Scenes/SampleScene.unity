@@ -246,6 +246,7 @@ GameObject:
   - component: {fileID: 294528094}
   - component: {fileID: 294528097}
   - component: {fileID: 294528098}
+  - component: {fileID: 294528099}
   m_Layer: 0
   m_Name: Player
   m_TagString: Player
@@ -315,6 +316,9 @@ MonoBehaviour:
   RunSpeed: 10
   WalkSpeed: 4
   jumpForce: 5
+  squatHeight: 1.5
+  offsetCentrController: -0.25
+  cameraOffsetPosition: 0.4
 --- !u!114 &294528094
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -386,6 +390,19 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   animator: {fileID: 5348524111987835590}
+  playerController: {fileID: 294528093}
+--- !u!114 &294528099
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 294528088}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4a624fbdaa89c2348b1caca2daf9d9c6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &330585543
 GameObject:
   m_ObjectHideFlags: 0

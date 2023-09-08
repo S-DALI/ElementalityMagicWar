@@ -3,9 +3,10 @@ using UnityEngine;
 public class AnimationController : MonoBehaviour
 {
     [SerializeField] private Animator animator;
+    [SerializeField] private PlayerController playerController;
     void Start()
     {
-
+        playerController.OnRun += Run;
     }
     void Update()
     {
@@ -16,13 +17,13 @@ public class AnimationController : MonoBehaviour
         else
             animator.SetBool("Walking", false);
 
-        if (Input.GetKey(KeyCode.LeftShift))
-        {
-            animator.SetBool("Running", true);
-        }
-        else animator.SetBool("Running", false);
+        //if (Input.GetKey(KeyCode.LeftShift))
+        //{
+        //    animator.SetBool("Running", true);
+        //}
+        //else animator.SetBool("Running", false);
 
-        if (Input.GetKey(KeyCode.LeftControl))
+        if (Input.GetKey(KeyCode.LeftControl) && !Input.GetKey(KeyCode.LeftShift))
         {
             animator.SetBool("Crouching", true);
         }
@@ -31,5 +32,13 @@ public class AnimationController : MonoBehaviour
 
         animator.SetFloat("VerticalInput", Input.GetAxis("Vertical"));
         animator.SetFloat("HorizontalInput", Input.GetAxis("Horizontal"));
+    }
+
+    void Run(bool isRunning)
+    {
+        if(isRunning && !Input.GetKey(KeyCode.LeftControl))
+            animator.SetBool("Running", true);
+        else
+            animator.SetBool("Running", false);
     }
 }
